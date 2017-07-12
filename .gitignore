@@ -13,8 +13,7 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
-*.md
-README.md
+
 
 # Windows shortcuts
 *.lnk
@@ -27,6 +26,8 @@ README.md
 # =========================
 
 .DS_Store
+*.md
+README.md
 .AppleDouble
 .LSOverride
 
