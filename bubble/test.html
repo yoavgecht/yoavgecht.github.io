@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Test</title>
+  <style>
+	.messy-array{
+  		position: relative;
+	}
+	.messy-array>.num{
+	  position: absolute;
+	  height: 70px;
+	  line-height: 70px;
+	  transition: left 0.3s ease-in-out;
+	  text-align: center;
+	  font-size: 2em;
+	  font-family: ‘Arial Black’, Gadget, sans-serif;
+	}
+
+	.buttons-container{position:absolute;bottom:150px;left:100px;}
+  </style>
+</head>
+
+<body>
+	<div class="messy-array">
+	</div>
+
+	<div class="buttons-container">
+		<button id="draw">draw & sort</button>
+	</div>
+	
+	
+<script>
+	'use strict';
+
+function CALLBACK(data){
+		if(data.sessionId){
+			var sessionId = data.sessionId;
+			var script = document.createElement('script');
+		    script.type = 'text/javascript';
+		    script.async = true;
+		    script.src = 'http://dev1.nanorep.com/~qa/api/widget/jsonp/v1/q.js?cb=CALLBACK&text=Give%20me%an%array&sid=' + sessionId;
+		    document.getElementsByTagName('body')[0].appendChild(script);
+		} else{
+			var arr = JSON.parse(data.answers[0].summary);
+			document.getElementById('draw').addEventListener('click', function(){
+				drawArray(arr);
+				this.setAttribute('disabled', true)
+			});
+
+		}
+	}
+
+
+const numberWidth = 70;
+const delayBetweenAnimations = 500;
+/**
+ * bubbleSort method
+ */
+Array.prototype.bubbleSortGen = function*() {
+  var swap = function(elms, i1, i2) {
+  console.log(elms);
+  console.log(i1);
+  console.log(i2);
+    const t = elms[i1];
+    elms[i1] = elms[i2];
+    elms[i2] = t;
+  }
+  for (var i = 0, len = this.length; i < len; i++) {
+    for (var j = 0, last = len - i; j < last; j++) {
+      if (this[j] > this[j + 1]) {
+        yield j;
+        swap(this, j, j + 1);
+      }
+    }
+  }
+}
+Array.prototype.bubbleSort = function() {
+  // Run generator until end
+  while (this.bubbleSortGen().next().done === false);
+  return this;
+}
+ 
+var loopThroughGeneratorWithDelay = function() {
+  var i = 0;
+  var runNext = function(generator, fn, delay) {
+    console.log(generator);
+    console.log(fn);
+    console.log(delay);
+    var next = generator.next();
+    if (next.done === false) {
+      fn(next.value);
+      setTimeout(runNext.apply.bind(runNext, null, arguments), delay);
+    }
+  }
+  runNext.apply(this, arguments);
+}
+ 
+var drawArray = function(givenArray) {
+  var divsArray = new Array(givenArray.length);
+ 
+  var frag = document.createDocumentFragment();
+  givenArray.forEach(function(value, index){
+    var div = document.createElement("div");
+ 
+    div.classList.add('num');
+    div.innerHTML = value;
+    div.style.height = (70 + value) + "px";
+    div.style.width = numberWidth + 'px';
+    div.style.left = (numberWidth * index) + 'px';
+    div.style.backgroundColor = "#" + ("000000" + (Math.floor(Math.random() * 0xFFFFFF)).toString(16)).substr(-6);
+ 
+    divsArray[index] = div;
+    frag.appendChild(div);
+  });
+  document.getElementsByClassName('messy-array')[0].appendChild(frag);
+ 
+  // Start sorting
+  var gen = givenArray.bubbleSortGen();
+  loopThroughGeneratorWithDelay(givenArray.bubbleSortGen(), function(value) {
+    const bigElement = divsArray[value];
+    const smallElement = divsArray[value + 1];
+ 
+    // Swap
+    divsArray[value] = smallElement;
+    divsArray[value + 1] = bigElement;
+ 
+    // Change Css accordingly
+    smallElement.style.left = (numberWidth * value) + 'px';
+    bigElement.style.left = (numberWidth * (value + 1)) + 'px';
+  }, delayBetweenAnimations);
+}
+</script>
+<script src='http://dev1.nanorep.com/~qa/api/widget/jsonp/v1/hello.js?url=1&configId=633904053046562504&doctype=html5&cb=CALLBACK'></script>
+</body>
+</html>

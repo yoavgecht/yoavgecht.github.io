@@ -1,0 +1,13 @@
+<ul class="cities">
+	<li ng-repeat="city in vm.cities">
+		<input 
+			type="checkbox" 
+			id={{city}} 
+			value="{{city}}" 
+			name="{{city}}"
+			ng-click="vm.toggleSelection(city)"
+			>{{city}}
+			</input>
+	</li>
+</ul>
+

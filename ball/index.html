@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style type="text/css">
+  		.container{
+  			width:850px;
+  			margin:0 auto;
+  		}
+
+  		ul{list-style: none;}
+  		ul li{
+  			float:left;
+  			border:1px solid black;
+  		}
+
+  		ul li.display{	
+		    width: 550px;
+		    height: 600px;
+		    position:relative;
+  		}
+
+  		ul li.controller{
+  			width: 195px;
+			height: 600px;
+			margin-left: 50px;
+  		}
+
+  		.controller ul{
+  			margin: 250px auto 0 auto;
+  			position: relative;
+  		}
+
+  		.controller ul li{
+  			width:20px;
+  			height:35px;
+  			border:1px solid black;
+  			cursor:pointer;
+  		}
+
+  		.controller ul li.bottom{
+  			  position: absolute;
+			  top: 50px;
+			  right: 80px;
+
+  		}
+
+  		.controller ul li.top{
+	   		  position: absolute;
+			  top: -19px;
+			  right: 80px;
+  		}
+
+  		.controller ul li.right{
+  		 	position: absolute;
+			top: 24px;
+			right: 30px;
+			width: 35px;
+ 			height: 20px;
+  		}
+
+  		.controller ul li.left{
+  		 	position: absolute;
+			top: 24px;
+			right: 115px;
+			width: 35px;
+  			height: 20px;
+  		}
+
+  		#ball{
+		   width: 100px;
+		  height: 100px;
+		  border-radius: 100px;
+		  background: blue;
+		  position: absolute;
+		  top: 245px;
+		  right: 222px;
+		  left: 222px;
+		  bottom: 0px;
+
+  		}
+
+  		.red{background:red!important}
+
+
+
+ 
+ 
+
+
+
+  </style>
+  <title>Test</title>
+</head>
+<body>
+	<div class="container">
+		<ul>
+			<li class="display">
+				<div id="ball"></div>
+			</li>
+			<li class="controller">
+				<ul>
+					<li class="bottom">V</li>
+					<li class="left"><</li>	
+					<li class="top">^</li>	
+					<li class="right">></li>		
+				</ul>
+			</li>
+		</ul>	
+	</div>	
+
+<script type="text/javascript">
+	(function(){
+		var controller = {
+		init:function(){
+			this.topBtn.onclick = this.getTopPosition;
+			this.bottomBtn.onclick = this.getBottomPosition;
+			this.rightBtn.onclick = this.getRightPosition;
+			this.leftBtn.onclick = this.getLeftPosition;
+			
+		},
+
+		topBtn:document.getElementsByClassName('top')[0],
+		bottomBtn:document.getElementsByClassName('bottom')[0],
+		rightBtn:document.getElementsByClassName('right')[0],
+		leftBtn:document.getElementsByClassName('left')[0],
+		ball:document.getElementById('ball'),
+		vertical:parseInt(getComputedStyle(this.ball, null).getPropertyValue("top")),
+		horizontal:parseInt(getComputedStyle(this.ball, null).getPropertyValue("left")),
+		moveByPix:10,
+		
+		getTopPosition:function(){
+			if( !controller.checkTopEdge() ){
+				controller.ball.className = "red";
+				controller.moveByPix = 0;
+			} else{
+				controller.ball.className = "";
+				controller.moveByPix = 10;
+			}
+
+			controller.ball.style.top = controller.vertical - controller.moveByPix + 'px';
+			controller.vertical = parseInt(controller.ball.style.top);	 	
+		},
+
+		getBottomPosition:function(){
+			if( !controller.checkBottomEdge() ){
+				controller.ball.className = "red";
+				controller.moveByPix = 0;
+			} else{
+				controller.ball.className = "";
+				controller.moveByPix = 10;
+			}
+
+			controller.ball.style.top = controller.vertical + controller.moveByPix + 'px';
+			controller.vertical = parseInt(controller.ball.style.top);
+		},
+
+		getRightPosition:function(){
+			if( !controller.checkRightEdge() ){
+				controller.ball.className = "red";
+				controller.moveByPix = 0;
+			} else{
+				controller.ball.className = "";
+				controller.moveByPix = 10;
+			}
+
+			controller.ball.style.left = controller.horizontal + controller.moveByPix + 'px';
+			controller.horizontal = parseInt(controller.ball.style.left);	 	
+		},
+
+		getLeftPosition:function(){
+			if( !controller.checkLeftEdge() ){
+				controller.ball.className = "red";
+				controller.moveByPix = 0;
+			} else{
+				controller.ball.className = "";
+				controller.moveByPix = 10;
+			}
+
+			controller.ball.style.left = controller.horizontal - controller.moveByPix + 'px';
+			controller.horizontal = parseInt(controller.ball.style.left);	 	
+		},
+				 	
+
+
+		checkTopEdge:function(){
+			 return controller.vertical <= 5 ? false : true;
+		},
+
+		checkBottomEdge:function(){
+			return controller.vertical >= 495 ? false : true;
+		},
+
+		checkRightEdge:function(){
+			 return controller.horizontal >= 440 ? false : true;
+		},
+
+		checkLeftEdge:function(){
+			 return controller.horizontal <= 12 ? false : true;
+		}
+
+
+	}
+		
+	controller.init();
+
+	}());
+	
+
+
+
+
+</script>
+</body>
+</html>

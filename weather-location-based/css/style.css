@@ -1,0 +1,269 @@
+/* @override 
+  http://planetoftheweb.com/_/css/styles.css */
+
+@import url("https://fonts.googleapis.com/css?family=Bree+Serif|Merriweather:400,300,700,900|Droid+Sans:400,700");
+
+/* Reset Styles */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+html {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+
+/* Base Styles */
+
+
+html {
+  background-color: #ffffff; 
+  min-height: 100%;
+  height: auto;
+}
+
+body  {
+  font-family: Merriweather, serif;
+  font-size: 1rem;
+  line-height: 160%;
+  *zoom: 1;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bree Serif', serif;
+  font-weight: normal;
+  color: #475b62;
+  text-shadow: 1px 1px rgb(255,255,255, 1);
+}
+
+a {
+  color: #145266;
+  font-family: Bree Serif, serif;
+}
+
+h1{
+  color: #145266;
+  font-size: 2.2rem;
+  line-height: 100%;
+  margin-bottom: 10px;
+}
+
+h2{ 
+  font-size: 1.5rem;
+  line-height: 90%;
+  color: #D26C22;
+}
+
+
+
+p {
+  line-height: 1.3rem;
+  color: #475B62;
+  margin-bottom: 10px;
+  font-family: 'Merriweather';
+}
+
+a.small {
+  line-height: 100%;
+  font-size: .9rem;
+}
+
+
+/* Search Styles */
+
+
+
+.container-fluid{
+  display:none;
+}
+
+.container-fluid.loader{
+  display:block
+}
+
+
+.weatherPage h2, .weatherPage h3 {
+  text-align:center;
+}
+
+
+h2.title{
+  color:#D26C22;
+  text-decoration:underline;
+  text-align:center;
+  margin-top: 30px;
+}
+
+h3.area{
+
+    color:#505050;
+    font-family:'Oswald', sans-serif;
+    font-weight:500;
+    line-height: 1.1;
+    font-size: 24px;
+    margin:0;
+    padding:0;
+    text-align:center;
+    padding: 30px 0;
+
+}
+
+
+
+div.info h3{
+  font-size: 18px;
+  font-family:'Oswald', 'sans-serif';
+  color:#333;
+}
+
+.dayList{
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-left:53px;
+  text-align:center;
+  border:1px solid black;
+  border-radius:20px;
+  padding:20px;
+  box-shadow: 10px 10px 5px #888888;
+  background:url(http://farm6.static.flickr.com/5500/13903358237_1f311f1bd9_m.jpg) no-repeat center center;
+}
+
+
+.dayList h3{
+  font-size:20px;
+  color:black;
+}
+
+.dayList h2{
+  color:#000;
+  line-height:27px;
+
+}
+
+.dayList div{
+  padding: 0 20px;
+  text-align: center;
+  border-left: 1px solid #ddd;
+}
+
+.dayList .days.last{
+  border-right: 1px solid #ddd;
+}
+
+@media (max-width: 768px){
+  .dayList{
+    width: 60%;
+    margin:10px auto 20px auto;
+  }
+
+  .dayList:nth-child(5) {
+       margin:10px auto 20px auto;
+     }
+}
+
+@media (min-width:768px){
+   .dayList:nth-child(5) {
+       margin-left:170px;
+     }
+  }
+
+  @media (max-width:768px){
+   .dayList {
+       margin-left:170px;
+     }
+  }
+
+  @media (max-width:767px){
+   .dayList {
+       margin:10px auto 20px auto;
+     }
+  }
+
+
+@media (max-width: 1199px){
+  .dayList{
+    margin-bottom:35px;
+  }
+  .dayList h2.day {
+    font-size: 1.5rem;
+  }
+
+}
+
+@media (min-width: 1200px){
+  .dayList:nth-child(5) {
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-left: 53px;
+  }
+}
+
+@media (max-width: 769px){
+  .dayList{
+    margin-bottom:35px;
+  }
+}
+
+
+@media (max-width: 1369px){
+  .dayList h2.day {
+    font-size:1.2rem;
+  }
+}
+
+@media (max-width: 1199px){
+  .dayList h2.day {
+    font-size: 1.5rem;
+  }
+}
+
+
+
+

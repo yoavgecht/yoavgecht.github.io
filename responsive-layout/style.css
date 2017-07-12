@@ -1,0 +1,460 @@
+/* red text #e46965 */
+/* gray text #777 */
+
+
+@import url(http://fonts.googleapis.com/css?family=Alegreya+Sans:400,700);
+html, body, ul, li, h1, h2, h3, h4, h5, h6, img, p{
+	color:#777;
+	font-family:'arial', 'Helvetica', 'sans-serif';
+	margin:0;
+	padding:0;
+}
+
+.show{display:block!important}
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+h1, h2, h3, h4, h5, h6 {
+	/* font-family: "alverata-informal-pe", sans-serif; */
+	font-family: 'Alegreya Sans', sans-serif;
+}
+
+h2{
+	color:#e46965;
+	font-size:40px;
+	font-weight:normal;
+	margin:15px 0;
+}
+
+body{
+	font-size:14px;
+	letter-spacing:0.2px;
+}
+
+.container{
+	max-width:900px;
+	margin:0 auto;
+}
+
+/* Main Navigation */
+
+.menu-icon{display:none;}
+
+nav{
+	background:#dadada;
+	height:40px;
+}
+
+.nav-list, .social-list{
+	list-style:none;
+}
+
+.nav-list li, .social-list li{
+	float:left;
+}
+
+.social-list{
+	float:right;
+	margin-top:5px;
+}
+
+.social-list li{
+	margin-left:20px;
+}
+
+.nav-list{
+	padding-top:10px;
+	float:left;
+}
+
+.nav-list li{
+	margin-right:20px;
+}
+
+.nav-list li a{
+	color:#fff;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+
+/* Header */
+header h1, header h3{
+	font-weight:normal;
+	text-align:center;
+	text-transform: uppercase;
+}
+
+header h1{
+	font-size:44px;
+	margin-top:20px;
+	text-transform:capitalize;
+}
+
+header h3{
+	color: #e46965;
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+/* Featue section */
+
+.feature{
+	background:#363636;
+}
+
+.feature-list{
+	list-style:none;
+	background:url(images/feature-bg.jpg) top center no-repeat;
+	height:300px;
+}
+
+.feature-list li{
+	width:33.333%;
+	height:300px;
+	float:left;
+	border-left:1px solid #fff;
+	box-sizing:border-box;
+	text-align:center;
+	padding-top:100px;
+}
+
+.feature-list li:last-child{
+	border-right:1px solid #fff;
+}
+
+.feature-list li a{
+	text-decoration:none;
+}
+
+.feature-list li a:hover .feature-title{
+	opacity:1;
+}
+
+.feature-list li h3{
+	color:#fff;
+	opacity:0.5;
+	font-size:20px;
+	font-weight:normal;
+	margin-top:5px;
+}
+
+/* Portfolio */
+
+.portfolio-samples{
+	background:#dadada;
+	padding:5px 0 20px 0;
+	margin-top:10px;
+
+}
+
+.portfolio-list{
+	list-style:none;
+}
+
+.portfolio-list li{
+	background:#555;
+	width:210px;
+	height:210px;
+	float:left;
+	margin-right:20px;
+	position:relative;
+
+}
+
+.portfolio-list li:last-child{
+	margin-right:0;
+}
+
+.portfolio-list .port-laptops{
+	background:url(images/laptops.jpg) center center no-repeat;
+}
+
+.portfolio-list .port-acme{
+	background:url(images/acmelogo.gif) -200px -60px no-repeat;
+}
+
+.portfolio-list .port-demoreel{
+	background:url(images/tablet.jpg) center center no-repeat;
+}
+
+.portfolio-list .port-logo{
+	background:url(images/alogo.gif) center center no-repeat;
+}
+
+.portfolio-list li>span{
+	position:absolute;
+	width:196px;
+	bottom:0;
+	right:0;
+	display:block;
+	background:rgba(0,0,0,0.5);
+	padding:7px;
+}
+
+.portfolio-list li span a{
+	text-decoration:none;
+	color:#fff;
+	display:block;
+	width:196px;
+}
+
+.portfolio-list li span a span{
+	display: block;
+    width: 100px;
+    float: left;
+}
+
+.portfolio-list li span a img{
+	  float: right;
+}
+
+/*footer */
+
+footer{
+	background:#252525;
+	color:#9d9d9d;
+	padding:20px 0 60px 0;
+	position:relative;
+}
+
+footer h3{
+	color:#e46965;
+	font-size:30px;
+	font-weight:normal;
+	margin:10px 0;
+}
+
+.col-one-third{
+	width:33%;
+	float:left;
+}
+
+.footer-list dt{
+	font-weight:bold;
+}
+
+.footer-list dd{
+	margin-left:0;
+	margin-bottom:20px;
+	font-style:italic;
+}
+
+.footer address{
+	font-style:normal;
+}
+
+.footer address a{
+	color:#9d9d9d;
+	text-decoration:none;
+	font-style:italic;
+}
+
+.footer address a:hover{
+	text-decoration:underline;
+}
+
+footer .registration input{
+	width:100%;
+	display:block;
+	background:#363636;
+	border:1px solid #6d6d6d;
+	color:#6d6d6d;
+	padding:10px;
+	margin-bottom:10px;
+	font-size:18px;
+	box-sizing:border-box;
+}
+
+footer .registration button{
+	background: #e46965;
+	border:none;
+	color:#fff;
+	font-family: 'Alegreya Sans', sans-serif;
+	font-size:20px;
+	width:100%;
+	box-sizing:border-box;
+	padding:10px;
+	text-transform: capitalize;
+}
+
+footer .copyright{
+	width:100%;
+	display:block;
+	background:#000;
+	color:#555;
+	text-align:center;
+	padding:20px 0;
+	position:absolute;
+	bottom:0;
+}
+
+/* responsive */
+
+@media(max-width:899px){ /* If the browser is at 899px or less do this */
+	.container{
+		padding:0 10px;
+	}
+
+	.feature-list{
+		margin: 0 10px;
+		padding:0;
+
+	}
+
+	.portfolio-list {
+		width:100%;
+	}
+
+	.portfolio-list li{
+		width:25%;
+		padding:0;
+		margin:;
+	}
+
+	.portfolio-list li>span{
+		width: 94%;
+		padding: 0.38em;
+	}
+
+	.portfolio-list li span a img{
+		float:none;
+		margin-left:26px;
+
+	}
+} 	
+
+@media(max-width:914px){
+	.portfolio-list li{
+		margin-right:0;
+	}
+}
+
+
+@media(max-width:640px){
+	.portfolio-list li{
+		float:none;
+		width:100%;
+	}
+
+	.portfolio-list li span a{
+		width:100%;
+	}
+
+	.portfolio-list li>span{
+		width:96.5%;
+	}
+
+	.portfolio-list li span a img{
+		float:right;
+		margin-left:none;
+
+	}
+
+	.nav-list{
+		display:none;
+		background:#aaa;
+		width:100%;
+		padding:10px;
+		margin-top:6px;
+		padding-bottom:0;
+		position:relative;
+		left:-10px;
+	}
+
+	.social-list{
+		position:absolute;
+		top:0;
+		right:10px;
+	}
+
+	.menu-icon{
+		display:block;
+		padding-top:6px;
+		cursor:pointer;
+	}
+
+	.nav-list li{
+		float:none;
+		display:block;
+		margin-bottom:20px;
+	}
+
+	.feature-list{
+		background:none;
+		width:100%;
+		height:auto;
+		margin:0;
+	}
+
+	.feature-list li{
+		background-image:url(images/feature-bg.jpg);
+		float:none;
+		height:120px;
+		border-right:none!important;
+		border-left:none;
+		border-bottom:1px solid #fff;
+		width:100%;
+		text-align:left;
+		padding:0; 
+
+	}
+
+	.feature-list li h3{
+		margin-top:0;
+	}
+
+	.feature-icon{
+		margin:28px 20px 0 10px;
+		float:left;
+	}
+
+	.feature-title{
+		line-height:120px;
+		margin:-top:0;
+	}
+
+	.feature-web{
+		background-position:top left;
+	}
+
+	.feature-graphic{
+		background-position:bottom center;
+	}
+
+	.feature-video{
+		background-position:center right;
+	}
+
+	.col-one-third{
+		float:none;
+		width:100%;
+	}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
