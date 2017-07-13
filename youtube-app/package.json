@@ -1,0 +1,28 @@
+{
+  "name": "youtube-app",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://yoavgecht.github.io/yoavgecht.github.io",
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-scripts": "1.0.10",
+    "react-redux": "4.3.0",
+    "react-router": "^2.0.1",
+    "redux": "^3.0.4",
+    "jquery": "^2.2.1",
+    "lodash": "^3.10.1",
+    "youtube-api-search": "0.0.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.0.0"
+  }
+}
