@@ -2,7 +2,7 @@
   "name": "youtube-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://yoavgecht.github.io/youtube-app/yoavgecht.github.io",
+  "homepage": "https://yoavgecht.github.io/yoavgecht.github.io",
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
